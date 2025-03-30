@@ -1,1 +1,16 @@
-spring.application.name=morpheus
+server:
+  servlet:
+    context-path: /morpheus
+
+spring:
+  application:
+    name: morpheus
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
