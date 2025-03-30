@@ -16,5 +16,4 @@ public class MorpheusResource {
     public String healthcheck() {
         return "SUCCESS";
     }
-
 }
