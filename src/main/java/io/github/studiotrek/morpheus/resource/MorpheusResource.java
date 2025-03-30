@@ -12,7 +12,7 @@ import static org.springframework.http.HttpStatus.OK;
 public class MorpheusResource {
 
     @ResponseStatus(OK)
-    @GetMapping("/healthcheck")
+    @GetMapping("/health")
     public String healthcheck() {
         return "SUCCESS";
     }
