@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.studiotrek</groupId>
 	<artifactId>morpheus</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.1</version>
 	<name>morpheus</name>
 	<description>Demo project for Spring Boot</description>
 

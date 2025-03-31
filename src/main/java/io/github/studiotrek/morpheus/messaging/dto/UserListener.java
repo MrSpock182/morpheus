@@ -1,6 +1,9 @@
 package io.github.studiotrek.morpheus.messaging.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UserListener {
+    @JsonProperty
     private String name;
 
     public UserListener() {
