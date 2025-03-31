@@ -6,6 +6,8 @@ server:
 spring:
   application:
     name: morpheus
+  aot:
+    enabled: false
   kafka:
     bootstrap-servers: b-1.studiotrekkafkadev.wl52jz.c25.kafka.us-east-1.amazonaws.com:9092,b-2.studiotrekkafkadev.wl52jz.c25.kafka.us-east-1.amazonaws.com:9092
     topic:
