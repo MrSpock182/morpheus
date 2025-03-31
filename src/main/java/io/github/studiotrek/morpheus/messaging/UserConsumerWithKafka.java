@@ -14,14 +14,14 @@ import org.springframework.stereotype.Component;
 public class UserConsumerWithKafka {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserConsumerWithKafka.class);
 
-    @RetryableTopic(
-            autoCreateTopics = "false",
-            backoff = @Backoff(
-                    delay = 15000,
-                    multiplier = 2.0,
-                    maxDelay = 54000),
-            topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE
-    )
+//    @RetryableTopic(
+//            autoCreateTopics = "false",
+//            backoff = @Backoff(
+//                    delay = 15000,
+//                    multiplier = 2.0,
+//                    maxDelay = 54000),
+//            topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE
+//    )
     @KafkaListener(
             topics = "${spring.kafka.topic.msk-topic}",
             groupId = "${spring.kafka.consumer.group-id}",
