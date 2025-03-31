@@ -1,10 +1,24 @@
 server:
+  port: 8081
   servlet:
     context-path: /morpheus
 
 spring:
   application:
     name: morpheus
+  kafka:
+    replicas: 2
+    partitions: 10
+    bootstrap-servers: b-1.studiotrekkafkadev.5gw9bz.c25.kafka.us-east-1.amazonaws.com:9092,b-2.studiotrekkafkadev.5gw9bz.c25.kafka.us-east-1.amazonaws.com:9092
+    listener:
+      concurrency: 10
+    consumer:
+      group-id: credit-policy
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      session-timeout-ms: 15000
+      heartbeat-interval: 3000
+      bootstrap-servers: ${spring.kafka.bootstrap-servers}
 
 management:
   endpoint:
@@ -14,3 +28,7 @@ management:
     web:
       exposure:
         include: health,info
+
+logging:
+  level:
+    org.apache.kafka: ERROR
