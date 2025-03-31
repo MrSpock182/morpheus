@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.studiotrek</groupId>
 	<artifactId>morpheus</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>morpheus</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -12,7 +12,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
