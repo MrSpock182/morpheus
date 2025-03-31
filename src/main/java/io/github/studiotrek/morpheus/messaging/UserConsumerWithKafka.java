@@ -20,8 +20,8 @@ public class UserConsumerWithKafka {
 //            topicSuffixingStrategy = TopicSuffixingStrategy.SUFFIX_WITH_INDEX_VALUE
 //    )
     @KafkaListener(
-            topics = "mks-topic",
-            groupId = "mks-topic-group",
+            topics = "${spring.kafka.topic.msk-topic}",
+            groupId = "${spring.kafka.consumer.group-id}",
             containerFactory = "userConsumerFactory")
     public void listener(@Payload final UserListener payload) {
         LOGGER.info("MENSAGEM CHEGOU: " + payload.getName());

@@ -7,12 +7,13 @@ spring:
   application:
     name: morpheus
   kafka:
-    replicas: 2
-    partitions: 10
     bootstrap-servers: b-1.studiotrekkafkadev.wl52jz.c25.kafka.us-east-1.amazonaws.com:9092,b-2.studiotrekkafkadev.wl52jz.c25.kafka.us-east-1.amazonaws.com:9092
+    topic:
+      msk-topic: msk-topic
     listener:
       concurrency: 10
     consumer:
+      group-id: mks-topic-group
       enable-auto-commit: false
       auto-offset-reset: earliest
       bootstrap-servers: ${spring.kafka.bootstrap-servers}
