@@ -27,7 +27,7 @@ public class UserConsumerWithKafka {
             groupId = "mks-topic-group",
             containerFactory = "userConsumerFactory")
     public void listener(@Payload final UserListener payload) {
-        LOGGER.info("MENSAGEM CHEGOU: " + payload.name());
+        LOGGER.info("MENSAGEM CHEGOU: " + payload.getName());
     }
 
 }
