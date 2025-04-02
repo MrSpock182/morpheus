@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
   servlet:
     context-path: /morpheus
 
@@ -9,9 +9,16 @@ spring:
   aot:
     enabled: false
   kafka:
-    bootstrap-servers: b-1.studiotrekkafkadev.opvmnn.c25.kafka.us-east-1.amazonaws.com,b-2.studiotrekkafkadev.opvmnn.c25.kafka.us-east-1.amazonaws.com
+    bootstrap-servers: pkc-p11xm.us-east-1.aws.confluent.cloud:9092
     topic:
       msk-topic: msk-topic
+    properties:
+      security.protocol: SASL_SSL
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: >
+        org.apache.kafka.common.security.plain.PlainLoginModule required
+        username="KA6UMHGVOAVWB52M"
+        password="DhKEO7BHQLN2lktD3eQwZMYRS6fKjXS0Dbu+7OCmwmNolIAwU4fCFKPXkDrBw9TH";
     listener:
       concurrency: 10
     consumer:
@@ -19,6 +26,8 @@ spring:
       enable-auto-commit: false
       auto-offset-reset: earliest
       bootstrap-servers: ${spring.kafka.bootstrap-servers}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
 management:
   endpoint:
